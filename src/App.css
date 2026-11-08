@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #302326;
+  background: #fffdfc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button, a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.navbar {
+  min-height: 82px;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #fff;
+  border-bottom: 1px solid #f4e9e8;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-style: italic;
+  color: #d58e96;
+  white-space: nowrap;
+}
+
+.navigation {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+}
+
+.navigation a:hover {
+  color: #c87984;
+}
+
+.panier-btn {
+  padding: 11px 17px;
+  border: 1px solid #e7b9be;
+  border-radius: 30px;
+  color: #bd737e;
+  background: #fff;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: center;
+  gap: 55px;
+  padding: 65px 8%;
+  background: #fbf1ef;
+}
+
+.hero-texte {
+  max-width: 520px;
+}
+
+.surtitre {
+  color: #bd7d85;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1,
+.section-entete h2,
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.hero h1 {
+  margin: 20px 0;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.13;
+}
+
+.hero-texte p,
+.section-entete p,
+.contact p {
+  color: #806f70;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.bouton-principal {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 23px;
+  border: 0;
+  border-radius: 4px;
+  background: #d9959d;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bouton-principal:hover {
+  background: #bf7b85;
+}
+
+.hero-note {
+  margin-top: 25px;
+  color: #a18b8c;
+  font-size: 11px;
+}
+
+.hero-image {
+  position: relative;
+  min-height: 390px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 390px;
+  display: block;
+  object-fit: cover;
+  border-radius: 180px 180px 8px 8px;
+}
+
+.image-legende {
+  position: absolute;
+  right: -18px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 17px 20px;
+  background: #fffdfc;
+  box-shadow: 0 4px 20px #5e33331a;
+}
+
+.image-legende span {
+  color: #bd7d85;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.image-legende strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+}
+
+.avantages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 25px 5%;
+  border-bottom: 1px solid #f1e6e5;
+  color: #c57f89;
+}
+
+.avantages div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.avantages span {
+  color: #665759;
+  font-size: 11px;
+}
+
+.catalogue {
+  padding: 75px 6%;
+}
+
+.section-entete {
+  text-align: center;
+}
+
+.section-entete h2,
+.contact h2 {
+  margin: 12px 0;
+  font-size: 38px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.categorie {
+  padding: 10px 19px;
+  border: 1px solid #f0dedd;
+  border-radius: 30px;
+  background: white;
+  color: #715d60;
+  font-size: 12px;
+}
+
+.categorie.active {
+  background: #d9959d;
+  border-color: #d9959d;
+  color: white;
+}
+
+.grille-produits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 23px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.carte-produit {
+  overflow: hidden;
+  border: 1px solid #f0e9e7;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 3px 12px #44222208;
+}
+
+.produit-image {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  background: #fbf1ef;
+}
+
+.produit-image img {
+  display: block;
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.carte-produit:hover .produit-image img {
+  transform: scale(1.04);
+}
+
+.etiquette {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: #fff;
+  color: #c27e88;
+  font-size: 10px;
+}
+
+.produit-infos {
+  padding: 8px 15px 18px;
+}
+
+.produit-categorie {
+  color: #bd7d85;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.produit-infos h3 {
+  margin: 8px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.contenance {
+  color: #907e7f;
+  font-size: 12px;
+}
+
+.produit-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.produit-bas strong {
+  font-size: 14px;
+}
+
+.ajouter {
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #f8e9e9;
+  color: #a75f6b;
+  font-size: 11px;
+}
+
+.contact {
+  padding: 55px 20px;
+  text-align: center;
+  background: #fbf1ef;
+}
+
+.contact h2 {
+  font-size: 32px;
+}
+
+.footer {
+  padding: 35px 15px;
+  text-align: center;
+  background: #fff;
+}
+
+.footer p,
+.footer small {
+  color: #8f7d7f;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    gap: 30px;
+    padding: 45px 6%;
+  }
+
+  .grille-produits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    min-height: 70px;
+    padding: 14px 4%;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .panier-btn {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 6%;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-image,
+  .hero-image img {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .image-legende {
+    right: 5px;
+    bottom: 12px;
+  }
+
+  .avantages {
+    gap: 15px;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 8%;
+  }
+
+  .catalogue {
+    padding: 50px 4%;
+  }
+
+  .section-entete h2 {
+    font-size: 32px;
+  }
+
+  .produit-image {
+    margin: 6px;
+  }
+
+  .produit-image img {
+    height: 175px;
+  }
+
+  .produit-infos {
+    padding: 8px 9px 13px;
+  }
+
+  .produit-infos h3 {
+    font-size: 15px;
+  }
+
+  .produit-bas {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact h2 {
+    font-size: 28px;
+  }
+}
+
+/* Pied de page Rk_parfumerie */
+.footer {
+  background: #d99ba5;
+  color: #fff8f8;
+  padding: 55px 7% 30px;
+  text-align: center;
+}
+
+.footer .logo {
+  display: inline-block;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.footer p {
+  margin: 12px 0;
+  line-height: 1.8;
+}
+
+.footer small {
+  display: block;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer h3 {
+  margin: 24px 0 12px;
+}
+
+.footer .footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin: 15px 0 28px;
+}
+
+.footer .newsletter {
+  max-width: 600px;
+  margin: 40px auto 25px;
+  padding: 35px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer .newsletter h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.footer .newsletter p {
+  margin-bottom: 22px;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 18px 25px;
+  }
+
+  .footer .newsletter h2 {
+    font-size: 24px;
+  }
+
+  .footer .footer-links {
+    gap: 12px 18px;
+  }
+}
+
+.footer {
+  background: #d99ba5;
+  color: #fff8f8;
+  padding: 55px 6% 30px;
+  text-align: center;
+}
+
+.footer .logo {
+  display: inline-block;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-slogan {
+  margin: 12px 0 35px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+  max-width: 950px;
+  margin: 35px auto 45px;
+  text-align: left;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-column h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.footer-column a {
+  color: #fff4f4;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.newsletter {
+  max-width: 700px;
+  margin: 45px auto 30px;
+  padding: 40px 25px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 28px;
+  background: rgba(255,255,255,.09);
+  box-shadow: 0 3px 8px rgba(90,30,40,.08);
+}
+
+.newsletter h2 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+.newsletter p {
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.newsletter-button {
+  display: inline-block;
+  background: #c77d8b;
+  color: white;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.footer small {
+  display: block;
+  margin-top: 30px;
+  line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 18px;
+  }
+
+  .footer-column:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .newsletter h2 {
+    font-size: 25px;
+  }
+}
